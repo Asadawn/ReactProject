@@ -1,0 +1,1 @@
+.toString().replace(/0/g,'Zero')
