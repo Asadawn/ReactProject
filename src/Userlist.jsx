@@ -9,6 +9,7 @@ function Userlist() {
   return (
     <>
       <div className="container ">
+        <h1 className="text-dark align-center"> Userlist</h1>
         <div className="row ">{Cdata.map(ncard)}</div>
       </div>
     </>
