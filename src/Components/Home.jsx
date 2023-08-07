@@ -60,7 +60,7 @@ const Home = () => {
         <h1 className="text-light">User Information</h1>
         {people.map((person) => {
           return (
-            <div className="show" index={person.id} key={person.id}>
+            <div className="show" key={person.id}>
               <label>User Name:</label>
               <p>{person.username}</p>
               <label>Email:</label>

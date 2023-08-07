@@ -6,6 +6,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const [people, setPeople] = useState([]);
+
   const handleClick = () => {
     let person = {
       id: Math.floor(Math.random() * 100),
@@ -19,10 +20,9 @@ const Register = () => {
     setPassword("");
     console.log(person);
   };
-  const deletePerson = (key) => {
-    let newPerson = [...person];
-    newPerson.splice(key, 1);
-    setPerson([...newPerson]);
+  const deletePerson = (id) => {
+    let newPerson = people.filter((person) => person.id !== id);
+    setPeople(newPerson);
   };
   return (
     <div className="container-app">
@@ -63,13 +63,13 @@ const Register = () => {
         </button>
         {people.map((person) => {
           return (
-            <div className="show" index={person.id} key={person.id}>
-              <p>{person.username}</p>
-              <p>{person.email}</p>
-              <p>{person.password}</p>
+            <div className="show" key={person.id}>
+              <p className="p">{person.username}</p>
+              <p className="p">{person.email}</p>
+              <p className="p">{person.password}</p>
               <span
                 className="delete"
-                onClick={(e) => {
+                onClick={() => {
                   deletePerson(person.id);
                 }}
               >
