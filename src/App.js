@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import Userlist from "./Userlist";
 //import Calculater from './Components/Calculater';
 
+import Todo from "./Components/Todo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Userlist" element={<Userlist />} />
-          {/* <Route path="/Calculater" element={<Calculater />} /> */}
+          <Route path="/Todo" element={<Todo />} />
         </Routes>
       </BrowserRouter>
     </div>

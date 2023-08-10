@@ -37,8 +37,8 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/Calculater">
-              Calculater
+            <Link className="nav-link" to="/Todo">
+              TODO
             </Link>
           </li>
         </ul>
