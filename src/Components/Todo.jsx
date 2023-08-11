@@ -33,6 +33,7 @@ const Todo = () => {
             <h1 className="h1">TODO List</h1>
             <br />
             <input
+              value={inputlist}
               className="border-bottom border-secondary border-3"
               placeholder="Add Todo..."
               onChange={(e) => setInputlist(e.target.value)}
