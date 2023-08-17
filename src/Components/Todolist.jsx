@@ -4,7 +4,7 @@ const Todolist = (props) => {
   return (
     <div className="todo_style">
       <li className="li border-bottom border-secondary border-3">
-        <div
+        <span
           onClick={() => {
             props.onSelect(props.id);
           }}
@@ -12,7 +12,7 @@ const Todolist = (props) => {
           aria-hidden="true"
         >
           x
-        </div>
+        </span>
         {props.text}
       </li>
     </div>

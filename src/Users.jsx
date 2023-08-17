@@ -5,8 +5,8 @@ function Users(props) {
   return (
     <>
       <div className="col-md-4">
-        <div className="card mt-2 ml-4 mr-2 mb-3" style={{ width: "10 rem" }}>
-          <img className="card-img-top" src={img} alt={uname} />
+        <div className="card mt-2 ml-4 mr-2 mb-3" style={{ width: "25rem" }}>
+          <img className="card-img-top" height="500px" src={img} alt={uname} />
           <div className="card-body">
             <h2 className="card-text">
               <b>User Name: </b>
