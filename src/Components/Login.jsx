@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -15,6 +15,7 @@ const Login = () => {
       .min(6, "Password must be at least 6 characters")
       .max(40, "Password must not exceed 40 characters"),
   });
+  const [submittedData, setSubmittedData] = useState([]);
 
   const {
     register,
@@ -26,7 +27,9 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
+    localStorage.setItem("userData", JSON.stringify(data));
     console.log(JSON.stringify(data, null, 2));
+    setSubmittedData((prevData) => [...prevData, data]);
   };
 
   return (
@@ -36,6 +39,7 @@ const Login = () => {
         <div className="form-group m-2">
           <input
             type="text"
+            name="username"
             autoComplete="off"
             placeholder="Username"
             {...register("username")}
@@ -48,6 +52,7 @@ const Login = () => {
         <div className="form-group m-2">
           <input
             type="email"
+            name="email"
             autoComplete="off"
             placeholder="Email"
             {...register("email")}
@@ -60,6 +65,7 @@ const Login = () => {
         <div className="form-group m-2">
           <input
             type="password"
+            name="password"
             autoComplete="off"
             placeholder="Password"
             {...register("password")}
@@ -81,6 +87,20 @@ const Login = () => {
             Reset
           </button>
         </div>
+        {submittedData.length > 0 && (
+          <div className="col-5 mt-4">
+            <h3 className="text-light">Submitted Data:</h3>
+            {submittedData.map((data, index) => {
+              return (
+                <div className="show" key={index}>
+                  <p className="">{data.username}</p>
+                  <p className="">{data.email}</p>
+                  <p className="">{data.password}</p>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </form>
     </div>
   );
