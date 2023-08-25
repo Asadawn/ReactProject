@@ -6,9 +6,10 @@ const Header = () => {
     <nav className="navbar bg-dark navbar-dark navbar-expand-sm">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          <b>
-            React App<span>{BiLogoReact}</span>
-          </b>
+          <span style={{ fontSize: "1.9rem", marginRight: "10px" }}>
+            <BiLogoReact />
+          </span>
+          <b>React App</b>
         </Link>
         <ul className="navbar-nav">
           <li className="nav-item">
