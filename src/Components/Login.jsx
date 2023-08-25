@@ -26,10 +26,18 @@ const Login = () => {
     resolver: yupResolver(validationSchema),
   });
 
+  const deleteData = (indexToDelete) => {
+    const newData = submittedData.filter(
+      (data, index) => index !== indexToDelete
+    );
+    setSubmittedData(newData);
+  };
+
   const onSubmit = (data) => {
     localStorage.setItem("userData", JSON.stringify(data));
     console.log(JSON.stringify(data, null, 2));
     setSubmittedData((prevData) => [...prevData, data]);
+    reset();
   };
 
   return (
@@ -96,6 +104,14 @@ const Login = () => {
                   <p className="">{data.username}</p>
                   <p className="">{data.email}</p>
                   <p className="">{data.password}</p>
+                  <span
+                    className="delete"
+                    onClick={() => {
+                      deleteData(index);
+                    }}
+                  >
+                    X
+                  </span>
                 </div>
               );
             })}
